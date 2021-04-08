@@ -5,7 +5,7 @@ Make sure both of them are ready with `kubectl get nodes`{{execute}}.
 If they are not, wait a couple of seconds and try again.   
 
 
-`Open`{{execute T3}} new terminal (wait for the shell to pop-up) and start a container with the following information: 
+`Open`{{execute T3}} new terminal (wait for the shell to pop-up in the uppter terminal, it should have the header "Terminal3") and start a container with the following information: 
 ```
 kubectl apply -f - <<EOF
 apiVersion: v1

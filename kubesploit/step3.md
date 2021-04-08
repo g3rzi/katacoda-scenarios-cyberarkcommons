@@ -28,7 +28,7 @@ if [ `curl -sk  https://node01:10250/healthz` == "ok" ]; then
    else
    echo "Kubelet is NOT configured"
 fi
-```{{execute T3}}  
+```{{execute T1}}  
 
 Make sure you get the message: "Kubelet is configured for anonymous connections". If not, try again until it gets configured.  
 
@@ -37,9 +37,10 @@ Make sure you get the message: "Kubelet is configured for anonymous connections"
 Load the kubelet attack module from Terminal Host 1 by running `use module linux/go/kubeletAttack`{{execute T1}}.  
 
 You can view all the information with `info`{{execute T1}} command.  
-The module is set automatically to run on all the agents with this command; if it wasn't set, you could do it by running `set Agent all`{{execute T1}}.   
-We need to set the IP of the target machine, let's find the IP by running `ip addr show ens3  | awk '$1 == "inet" { print $2 }' | cut -d/ -f1`{{execute T3}} in `node1`.  
-Now, take this IP address and type in the server `set Url https://<IP>:10250`, and replace `<IP>` with the IP address we received.  
+The module is set automatically to run on all the agents with this command; if it wasn't set, you could do it by running `set Agent all`{{execute T1}}.  
+ 
+We need to set the IP of the target machine, let's find the IP by running `ip addr show ens3  | awk '$1 == "inet" { print $2 }' | cut -d/ -f1`{{execute T3}} in `node1` (Terminal Host 2).  
+Now, **take this IP address and type in the server** `set Url https://<IP>:10250`, and **replace** `<IP>` with the **IP address we received**.  
 
 The default command will list the pods through kubelet, execute it with `run`{{execute T1}} and wait for the output.  
 

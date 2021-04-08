@@ -29,7 +29,7 @@ To view the menu, run `help`{{execute}}. To see the list of modules, run `use mo
 
 #### Agent
 
-`Open`{{execute T3}} new terminal on the master and start this vulnerable container:  
+Let's `Open`{{execute T3}} a new terminal ("Terminal 3") on the controlplane (upper terminal) and start this vulnerable container:  
 ```
 kubectl apply -f - <<EOF
 apiVersion: v1
